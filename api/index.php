@@ -17,6 +17,14 @@ if (empty($_ENV['APP_KEY']) && empty(getenv('APP_KEY'))) {
     $_SERVER['APP_KEY'] = $key;
 }
 
+// Clean stale dev-mode cached files from bootstrap/cache if present
+foreach (['packages.php', 'services.php', 'config.php', 'routes.php'] as $staleFile) {
+    $filePath = __DIR__ . "/../bootstrap/cache/$staleFile";
+    if (file_exists($filePath)) {
+        @unlink($filePath);
+    }
+}
+
 // Prepare /tmp storage for Vercel Serverless environment
 $tmpStorage = '/tmp/storage';
 foreach ([
