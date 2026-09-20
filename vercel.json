@@ -24,13 +24,21 @@
   ],
   "env": {
     "PHP_VERSION": "8.4",
+    "APP_NAME": "Prediksi Alumni",
     "APP_ENV": "production",
-    "APP_CONFIG_CACHE": "/tmp/config.php",
-    "APP_EVENTS_CACHE": "/tmp/events.php",
-    "APP_PACKAGES_CACHE": "/tmp/packages.php",
-    "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",
-    "VIEW_COMPILED_PATH": "/tmp",
-    "CACHE_STORE": "array"
+    "APP_DEBUG": "true",
+    "APP_KEY": "base64:UtHyzibyBFTkitdqxZfnPuGj2OT5nFIzshyW4394gq0=",
+    "LOG_CHANNEL": "stderr",
+    "DB_CONNECTION": "mysql",
+    "DB_HOST": "gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+    "DB_PORT": "4000",
+    "DB_DATABASE": "test",
+    "DB_USERNAME": "2sdwXKc4oumSeL9.root",
+    "DB_PASSWORD": "EIjunn9ZO4NKlOBJ",
+    "MYSQL_ATTR_SSL_CA": "storage/certs/ca.pem",
+    "SESSION_DRIVER": "database",
+    "QUEUE_CONNECTION": "database",
+    "CACHE_STORE": "database",
+    "GOOGLE_SHEET_CSV_URL": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQo1kjbhNa0JCeID6QYqPJ_4fOUTBFrPemIX0X2LTLjh8MjlyTF8FYEcvEaV7WQYBT5UtSfPs9VGUl2/pub?format=csv&gid=0"
   }
 }
