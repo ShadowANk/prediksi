@@ -1,4 +1,6 @@
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Install system dependencies & Nginx
 RUN apk add --no-cache \
@@ -25,7 +27,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Install PHP dependencies for production
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 
 # Install NPM dependencies & build production frontend assets
 RUN npm install --ignore-scripts
