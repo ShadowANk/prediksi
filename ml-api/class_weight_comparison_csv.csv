@@ -1,0 +1,3 @@
+Pengaturan,Accuracy (%),Balanced Accuracy (%),Precision (%),Recall (%),F1-score (%)
+Tanpa class_weight,71.39,71.68,82.68,55.08,66.01
+class_weight=balanced,71.71,72.0,83.43,55.08,66.26

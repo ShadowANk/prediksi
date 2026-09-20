@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: tugasakhir-prediksi-alumni
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: singapore
+    envVars:
+      - key: APP_NAME
+        value: "Prediksi Alumni"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        value: "base64:UtHyzibyBFTkitdqxZfnPuGj2OT5nFIzshyW4394gq0="
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+      - key: DB_PORT
+        value: "4000"
+      - key: DB_DATABASE
+        value: test
+      - key: DB_USERNAME
+        value: 2sdwXKc4oumSeL9.root
+      - key: DB_PASSWORD
+        value: EIjunn9ZO4NKlOBJ
+      - key: MYSQL_ATTR_SSL_CA
+        value: storage/certs/ca.pem
+      - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: GOOGLE_SHEET_CSV_URL
+        value: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQo1kjbhNa0JCeID6QYqPJ_4fOUTBFrPemIX0X2LTLjh8MjlyTF8FYEcvEaV7WQYBT5UtSfPs9VGUl2/pub?format=csv&gid=0"

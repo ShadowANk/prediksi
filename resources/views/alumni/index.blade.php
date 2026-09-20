@@ -6,14 +6,16 @@
 
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-
     <div>
-        <h2 class="fw-bold">
+        <h2 class="fw-bold mb-0">
             Data Alumni
         </h2>
     </div>
-
-
+    <div>
+        <a href="{{ route('sync.google') }}" class="btn btn-success btn-pill shadow-sm">
+            <i class="bi bi-cloud-arrow-down-fill me-1"></i> Sync Google Sheet
+        </a>
+    </div>
 </div>
 
 

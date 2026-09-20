@@ -7,7 +7,7 @@
     <title>@yield('title', 'Tracer Study') - Tracer WICIDA</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -33,33 +33,37 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f1f5f9;
-            color: #334155;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            letter-spacing: -0.01em;
         }
 
         .navbar {
-            background-color: rgba(15, 23, 42, 0.96);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            padding: 0.5rem 0;
         }
 
         .nav-link {
             font-weight: 500;
-            padding: 0.5rem 1.2rem !important;
+            font-size: 0.88rem;
+            padding: 0.4rem 1rem !important;
             border-radius: 50px;
             transition: 0.2s;
-            color: rgba(255, 255, 255, 0.72) !important;
+            color: #475569 !important;
         }
 
         .nav-link:hover {
-            color: #fff !important;
+            color: var(--primary) !important;
+            background-color: #f1f5f9;
         }
 
         .nav-link.active {
             background: var(--primary);
             color: #fff !important;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
         }
 
         .card {
@@ -128,12 +132,65 @@
         }
 
         @media (max-width: 991.98px) {
+            .navbar {
+                padding: 0.75rem 0;
+            }
+
+            .navbar-collapse {
+                background: #ffffff;
+                border-radius: 16px;
+                padding: 1rem;
+                margin-top: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+                border: 1px solid #f1f5f9;
+            }
+
             .navbar-nav {
-                padding-top: 1rem;
+                padding-top: 0.25rem;
+                gap: 0.5rem !important;
             }
 
             .nav-link {
-                border-radius: 12px;
+                border-radius: 10px;
+                padding: 0.6rem 1rem !important;
+            }
+
+            .nav-link.active {
+                box-shadow: none;
+            }
+
+            .card {
+                border-radius: 16px;
+            }
+
+            .card-body {
+                padding: 1.25rem !important;
+            }
+
+            .chart-container {
+                height: 250px !important;
+            }
+
+            .metric-value {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+            }
+
+            .table {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -143,19 +200,18 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top mb-4">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top mb-4">
     <div class="container">
 
         <a
-            class="navbar-brand fw-bold fs-4"
+            class="navbar-brand d-flex align-items-center"
             href="{{ route('dashboard') }}"
         >
-            <i class="bi bi-mortarboard-fill text-primary me-2"></i>
-            Tracer <span class="text-primary">WICIDA</span>
+            <img src="{{ asset('images/logo-bkk.png') }}" alt="BKK WICIDA Logo" style="height: 42px; width: auto;">
         </a>
 
         <button
-            class="navbar-toggler"
+            class="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -170,7 +226,7 @@
             class="collapse navbar-collapse"
             id="navbarNav"
         >
-            <ul class="navbar-nav ms-auto gap-lg-2">
+            <ul class="navbar-nav ms-auto gap-lg-1 align-items-lg-center">
 
                 <li class="nav-item">
                     <a
@@ -197,10 +253,32 @@
                         class="nav-link {{ request()->routeIs('alumni.*') ? 'active' : '' }}"
                         href="{{ route('alumni.index') }}"
                     >
-                    <i class="bi bi-people"></i>
+                    <i class="bi bi-people me-1"></i>
                         Data Alumni
                     </a>
                 </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a
+                        class="btn btn-outline-success btn-sm rounded-pill px-3 py-1 mt-1 mt-lg-0 fw-semibold"
+                        href="{{ route('sync.google') }}"
+                        title="Sinkronkan data dari Google Sheet"
+                    >
+                        <i class="bi bi-cloud-arrow-down-fill me-1"></i>
+                        Sync Sheet
+                    </a>
+                </li>
+
+                @auth
+                <li class="nav-item ms-lg-2">
+                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3 py-1 mt-1 mt-lg-0 fw-semibold">
+                            <i class="bi bi-box-arrow-right me-1"></i> Logout
+                        </button>
+                    </form>
+                </li>
+                @endauth
 
             </ul>
         </div>

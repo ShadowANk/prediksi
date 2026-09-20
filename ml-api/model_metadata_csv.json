@@ -1,0 +1,31 @@
+{
+    "sumber_data": "Kuesioner Tracer Study 2025 (Jawaban) (3).csv",
+    "respons_mentah": 1109,
+    "alumni_unik": 804,
+    "duplikat_dihapus": 195,
+    "distribusi_target": {
+        "tidak_terserap": 395,
+        "terserap": 409
+    },
+    "protokol_evaluasi": "Stratified hold-out 80:20 dan 5-fold stratified cross-validation pada data latih",
+    "parameter_random_forest": {
+        "class_weight": "balanced",
+        "max_depth": 3,
+        "max_features": "sqrt",
+        "min_samples_leaf": 5,
+        "n_estimators": 200
+    },
+    "hasil_data_uji_persen": {
+        "train_accuracy": 71.85,
+        "test_accuracy": 72.67,
+        "balanced_accuracy": 72.87,
+        "precision_terserap": 79.69,
+        "recall_terserap": 62.2,
+        "f1_terserap": 69.86,
+        "train_test_gap": -0.82,
+        "tn": 66,
+        "fp": 13,
+        "fn": 31,
+        "tp": 51
+    }
+}

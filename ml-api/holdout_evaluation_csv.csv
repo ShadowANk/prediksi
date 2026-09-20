@@ -1,0 +1,8 @@
+Metrik,Nilai (%)
+Akurasi data latih,71.85
+Akurasi data uji,72.67
+Balanced accuracy data uji,72.87
+Precision kelas Terserap,79.69
+Recall kelas Terserap,62.2
+F1-score kelas Terserap,69.86
+Selisih akurasi latih-uji,-0.82

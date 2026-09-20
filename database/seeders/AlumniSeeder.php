@@ -13,114 +13,106 @@ class AlumniSeeder extends Seeder
     {
         $dataAlumni = [
             [
-                'nisn' => '0012345678',
+                'nim' => '20.41.001',
                 'nama_lengkap' => 'Rian Hidayat',
-                'jurusan' => 'Rekayasa Perangkat Lunak',
-                'tahun_lulus' => 2025,
+                'email_address' => 'rian.hidayat@example.com',
+                'no_whatsapp' => '081234567890',
+                'program_studi' => 'Teknik Informatika',
+                'tahun_lulus' => 2024,
                 'feature' => [
-                    'nilai_rata_rata' => 88.50,
-                    'nilai_pkl' => 90.00,
-                    'memiliki_sertifikasi' => true,
-                    'aktif_organisasi' => true,
+                    'f3_mencari_kerja_sebelum_lulus' => 1,
+                    'f6_jumlah_lamaran' => 5,
+                    'f17a_kompetensi_it' => 4.0,
+                    'f17a_kompetensi_inggris' => 3.5,
+                    'f17a_kompetensi_komunikasi' => 4.0,
+                    'f17a_kompetensi_kerjasama' => 4.5,
                 ],
                 'tracer' => [
-                    'status' => 'Bekerja',
-                    'nama_instansi' => 'PT Teknologi Jaya',
-                    'pendapatan' => 5000000,
+                    'f8_status' => 'Bekerja',
+                    'f5b_nama_perusahaan' => 'PT Teknologi Jaya',
+                    'pendapatan_per_bulan' => 5000000,
+                    'f14_hubungan_studi' => 'Erat',
                 ]
             ],
             [
-                'nisn' => '0023456789',
+                'nim' => '20.41.002',
                 'nama_lengkap' => 'Siti Aminah',
-                'jurusan' => 'Rekayasa Perangkat Lunak',
-                'tahun_lulus' => 2025,
+                'email_address' => 'siti.aminah@example.com',
+                'no_whatsapp' => '082345678901',
+                'program_studi' => 'Sistem Informasi',
+                'tahun_lulus' => 2024,
                 'feature' => [
-                    'nilai_rata_rata' => 85.00,
-                    'nilai_pkl' => 82.50,
-                    'memiliki_sertifikasi' => false,
-                    'aktif_organisasi' => true,
+                    'f3_mencari_kerja_sebelum_lulus' => 0,
+                    'f6_jumlah_lamaran' => 2,
+                    'f17a_kompetensi_it' => 3.5,
+                    'f17a_kompetensi_inggris' => 4.0,
+                    'f17a_kompetensi_komunikasi' => 4.0,
+                    'f17a_kompetensi_kerjasama' => 4.0,
                 ],
                 'tracer' => [
-                    'status' => 'Kuliah',
-                    'nama_instansi' => 'Universitas Indonesia',
-                    'pendapatan' => null,
+                    'f8_status' => 'Melanjutkan Pendidikan',
+                    'f5b_nama_perusahaan' => null,
+                    'pendapatan_per_bulan' => null,
+                    'f14_hubungan_studi' => null,
                 ]
             ],
             [
-                'nisn' => '0034567890',
+                'nim' => '20.41.003',
                 'nama_lengkap' => 'Budi Santoso',
-                'jurusan' => 'Teknik Komputer Jaringan',
-                'tahun_lulus' => 2025,
+                'email_address' => 'budi.santoso@example.com',
+                'no_whatsapp' => '083456789012',
+                'program_studi' => 'Manajemen Informatika',
+                'tahun_lulus' => 2024,
                 'feature' => [
-                    'nilai_rata_rata' => 78.00,
-                    'nilai_pkl' => 80.00,
-                    'memiliki_sertifikasi' => true,
-                    'aktif_organisasi' => false,
+                    'f3_mencari_kerja_sebelum_lulus' => 0,
+                    'f6_jumlah_lamaran' => 3,
+                    'f17a_kompetensi_it' => 4.0,
+                    'f17a_kompetensi_inggris' => 3.0,
+                    'f17a_kompetensi_komunikasi' => 3.5,
+                    'f17a_kompetensi_kerjasama' => 4.0,
                 ],
                 'tracer' => [
-                    'status' => 'Bekerja',
-                    'nama_instansi' => 'Cyber Sentosa',
-                    'pendapatan' => 4500000,
-                ]
-            ],
-            [
-                'nisn' => '0045678901',
-                'nama_lengkap' => 'Dewi Lestari',
-                'jurusan' => 'Teknik Komputer Jaringan',
-                'tahun_lulus' => 2025,
-                'feature' => [
-                    'nilai_rata_rata' => 72.50,
-                    'nilai_pkl' => 75.00,
-                    'memiliki_sertifikasi' => false,
-                    'aktif_organisasi' => false,
-                ],
-                'tracer' => [
-                    'status' => 'Belum Bekerja',
-                    'nama_instansi' => null,
-                    'pendapatan' => null,
-                ]
-            ],
-            [
-                'nisn' => '0056789012',
-                'nama_lengkap' => 'Fajar Pratama',
-                'jurusan' => 'Multi Media',
-                'tahun_lulus' => 2025,
-                'feature' => [
-                    'nilai_rata_rata' => 81.20,
-                    'nilai_pkl' => 85.00,
-                    'memiliki_sertifikasi' => false,
-                    'aktif_organisasi' => false,
-                ],
-                'tracer' => [
-                    'status' => 'Wirausaha',
-                    'nama_instansi' => 'Fajar Studio Kreatif',
-                    'pendapatan' => 3500000,
+                    'f8_status' => 'Belum Bekerja / Mencari Kerja',
+                    'f5b_nama_perusahaan' => null,
+                    'pendapatan_per_bulan' => null,
+                    'f14_hubungan_studi' => null,
                 ]
             ],
         ];
 
         foreach ($dataAlumni as $item) {
-            $alumni = Alumni::create([
-                'nisn' => $item['nisn'],
-                'nama_lengkap' => $item['nama_lengkap'],
-                'jurusan' => $item['jurusan'],
-                'tahun_lulus' => $item['tahun_lulus'],
-            ]);
+            $alumni = Alumni::updateOrCreate(
+                ['nim' => $item['nim']],
+                [
+                    'nama_lengkap' => $item['nama_lengkap'],
+                    'email_address' => $item['email_address'],
+                    'no_whatsapp' => $item['no_whatsapp'],
+                    'program_studi' => $item['program_studi'],
+                    'tahun_lulus' => $item['tahun_lulus'],
+                ]
+            );
 
-            AlumniFeature::create([
-                'alumni_id' => $alumni->id,
-                'nilai_rata_rata' => $item['feature']['nilai_rata_rata'],
-                'nilai_pkl' => $item['feature']['nilai_pkl'],
-                'memiliki_sertifikasi' => $item['feature']['memiliki_sertifikasi'],
-                'aktif_organisasi' => $item['feature']['aktif_organisasi'],
-            ]);
+            AlumniFeature::updateOrCreate(
+                ['alumni_id' => $alumni->id],
+                [
+                    'f3_mencari_kerja_sebelum_lulus' => $item['feature']['f3_mencari_kerja_sebelum_lulus'],
+                    'f6_jumlah_lamaran' => $item['feature']['f6_jumlah_lamaran'],
+                    'f17a_kompetensi_it' => $item['feature']['f17a_kompetensi_it'],
+                    'f17a_kompetensi_inggris' => $item['feature']['f17a_kompetensi_inggris'],
+                    'f17a_kompetensi_komunikasi' => $item['feature']['f17a_kompetensi_komunikasi'],
+                    'f17a_kompetensi_kerjasama' => $item['feature']['f17a_kompetensi_kerjasama'],
+                ]
+            );
 
-            TracerStudy::create([
-                'alumni_id' => $alumni->id,
-                'status' => $item['tracer']['status'],
-                'nama_instansi' => $item['tracer']['nama_instansi'],
-                'pendapatan' => $item['tracer']['pendapatan'],
-            ]);
+            TracerStudy::updateOrCreate(
+                ['alumni_id' => $alumni->id],
+                [
+                    'f8_status' => $item['tracer']['f8_status'],
+                    'f5b_nama_perusahaan' => $item['tracer']['f5b_nama_perusahaan'],
+                    'pendapatan_per_bulan' => $item['tracer']['pendapatan_per_bulan'],
+                    'f14_hubungan_studi' => $item['tracer']['f14_hubungan_studi'],
+                ]
+            );
         }
     }
 }

@@ -145,28 +145,7 @@
 </div>
 
 
-@if($totalPredicted < $totalAlumni)
 
-    <div class="alert alert-warning border-0 rounded-4 shadow-sm">
-
-        <i class="bi bi-exclamation-triangle-fill me-2"></i>
-
-        Prediksi operasional baru tersedia untuk
-
-        <strong>{{ $totalPredicted }}</strong>
-
-        dari
-
-        <strong>{{ $totalAlumni }}</strong>
-
-        alumni.
-
-        Grafik aktual dan prediksi memiliki jumlah observasi yang berbeda
-        sampai seluruh alumni selesai diprediksi.
-
-    </div>
-
-@endif
 
 
 <div class="row g-4 mb-4">
@@ -189,7 +168,7 @@
 
             </div>
 
-            <div style="height: 300px;">
+            <div class="chart-container" style="height: 300px;">
                 <canvas id="statusChart"></canvas>
             </div>
 
@@ -217,7 +196,7 @@
 
             </div>
 
-            <div style="height: 300px;">
+            <div class="chart-container" style="height: 300px;">
                 <canvas id="comparisonChart"></canvas>
             </div>
 
@@ -244,7 +223,7 @@
 
             </div>
 
-            <div style="height: 350px;">
+            <div class="chart-container" style="height: 350px;">
                 <canvas id="prodiChart"></canvas>
             </div>
 
@@ -269,7 +248,7 @@
     Chart.register(ChartDataLabels);
 
     Chart.defaults.font.family =
-        "'Plus Jakarta Sans', sans-serif";
+        "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 
     Chart.defaults.color = '#64748b';
 
