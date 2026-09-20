@@ -7,6 +7,10 @@ echo "Configuring Nginx to listen on port ${PORT}..."
 sed -i "s/listen 80;/listen ${PORT};/g" /etc/nginx/http.d/default.conf || true
 sed -i "s/listen \[::\]:80;/listen \[::\]:${PORT};/g" /etc/nginx/http.d/default.conf || true
 
+# Ensure storage directories & permissions exist
+mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs
+chmod -R 777 storage bootstrap/cache || true
+
 # Clear previous caches first to prevent stale configs
 php artisan config:clear || true
 
@@ -20,8 +24,15 @@ php artisan view:cache || true
 echo "Running database migrations..."
 php artisan migrate --force || true
 
-# Start PHP-FPM in background
-php-fpm -D
+# Start PHP-FPM in background as daemon with root permission (-R)
+echo "Starting PHP-FPM..."
+php-fpm -D -R
+
+# Wait 1 second and check PHP-FPM process
+sleep 1
+if ! pgrep php-fpm > /dev/null; then
+    echo "Warning: PHP-FPM process check failed!"
+fi
 
 # Start Nginx in foreground
 echo "Starting Nginx on port ${PORT}..."
